@@ -1,0 +1,18 @@
+mat-nav-list.list-horizontal {
+    padding: 0;
+    .mdc-list-item {
+      display: inline-block;
+      height: auto;
+      width: auto;
+    }
+}
+
+mat-nav-list a {
+    text-decoration: none;
+    color: white;
+}
+
+mat-nav-list a.active_route {
+   color: orange; /* Set the color for the active state */
+}
+
