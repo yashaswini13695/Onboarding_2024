@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MaterialModule } from "./_material/material.module";
 import { MyInfoComponent } from './my-info/my-info.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { MyInfoComponent } from './my-info/my-info.component';
   imports: [
     BrowserModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,7 +11,7 @@ const routes: Routes = [
   { path : 'forgot-password', component: ForgotPasswordComponent},
   { path : 'home', component : HomeComponent},
   { path : 'my-info', component : MyInfoComponent},
-  { path: '**', component: HomeComponent, pathMatch: 'full'}
+  { path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];
 
 @NgModule({
