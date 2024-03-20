@@ -7,7 +7,7 @@ import { AuthService } from '../_services/auth.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  currentUserRole: string = '';
+  currentUserRole: any;
 
   constructor(private authService: AuthService) {}
 
@@ -15,5 +15,11 @@ export class HomeComponent {
     this.authService.getCurrentUserRole().subscribe(role => {
       this.currentUserRole = role;
     });
+  }
+
+
+  logout() {
+    // Call the logout method from the AuthService
+    this.authService.logout();
   }
 }

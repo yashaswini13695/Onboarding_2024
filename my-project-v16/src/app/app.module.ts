@@ -11,6 +11,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MaterialModule } from "./_material/material.module";
 import { MyInfoComponent } from './my-info/my-info.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FilesComponent } from './files/files.component';
+import { PeopleComponent } from './people/people.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ForgotPasswordComponent,
     HomeComponent,
     NavBarComponent,
-    MyInfoComponent
+    MyInfoComponent,
+    FilesComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
