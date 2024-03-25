@@ -13,6 +13,9 @@ import { MyInfoComponent } from './my-info/my-info.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FilesComponent } from './files/files.component';
 import { PeopleComponent } from './people/people.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 @NgModule({
@@ -31,9 +34,11 @@ import { PeopleComponent } from './people/people.component';
     BrowserModule,
     MaterialModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [ provideAnimations()],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,18 +9,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit{
-  loginForm: FormGroup = this.formBuilder.group({
-    username: ['', Validators.required],
-    password: ['', Validators.required]
-  });
+  loginForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router
-  ) {}
+  ) {
+    this.loginForm = this.formBuilder.group({
+      username: ['', [Validators.required]],
+      password: ['', Validators.required]
+    });
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
   login() {
     const { username, password } = this.loginForm.value;

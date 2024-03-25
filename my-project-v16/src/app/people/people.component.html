@@ -1,1 +1,61 @@
-<p>people works!</p>
+<div>
+  <div class="peopleContainer">
+    <div class="content">
+      <mat-icon aria-hidden="false" aria-label=" filter icon">reorder</mat-icon> <h1>People</h1>
+    </div>
+    <div class="navigation">
+        <button class="left-btn">+ New Employee</button>
+        <nav>
+            <ul>
+                <li><a [class.active]="activeTab === 'list'" href="#" (click)="activateTab($event,'list')">List</a></li>
+                <li><a [class.active]="activeTab === 'directory'" href="#" (click)="activateTab($event,'directory')">Directory</a></li>
+                <li><a [class.active]="activeTab === 'chart'" href="#" (click)="activateTab($event,'chart')">Chart</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- <h1>(Icon)People</h1>
+    <div>Add Employee</div>
+    <div>A nav bar to the right with three contents</div> -->
+  </div>
+  <div>
+    <!----------// Open side bar to add filters when clicked on this tune Icon ------------>
+    <!-- <mat-icon aria-hidden="false" aria-label=" filter icon">tune</mat-icon> -->
+    <!-- <div>Showing active users and settings to right</div> -->
+  </div>
+  <div class="table-container">
+    <div class="example-header">
+      <mat-form-field appearance="outline">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Employment status</th>
+        <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+      </ng-container>
+      <ng-container matColumnDef="department">
+        <th mat-header-cell *matHeaderCellDef>Department</th>
+        <td mat-cell *matCellDef="let element">{{ element.department }}</td>
+      </ng-container>
+      <ng-container matColumnDef="jobTitle">
+        <th mat-header-cell *matHeaderCellDef>Job Title</th>
+        <td mat-cell *matCellDef="let element">{{ element.jobTitle }}</td>
+      </ng-container>
+      <ng-container matColumnDef="reportingTo">
+        <th mat-header-cell *matHeaderCellDef>Reporting To</th>
+        <td mat-cell *matCellDef="let element">{{ element.reportingTo }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="custom-header"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
