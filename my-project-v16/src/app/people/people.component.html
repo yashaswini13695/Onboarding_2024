@@ -23,12 +23,31 @@
     <!-- <div>Showing active users and settings to right</div> -->
   </div>
   <div class="table-container">
-    <div class="example-header">
-      <mat-form-field appearance="outline">
-        <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field>
+    <div class="filter-header">
+      <div class="filter-container">
+        <mat-form-field appearance="outline">
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="select-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Departments</mat-label>
+          <mat-select  [(ngModel)]="selectedDepartment" (selectionChange)="onDepartmentSelection()">
+            <mat-option [value]="'ALL'">ALL</mat-option>
+            <mat-option *ngFor="let department of departments" [value]="department.value">{{department.value}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Status</mat-label>
+          <mat-select [(ngModel)]="selectedStatus" (selectionChange)="onStatusSelection()">
+            <mat-option [value]="'ALL'">ALL</mat-option>
+            <mat-option *ngFor="let statusObj of status" [value]="statusObj.value">{{statusObj.value}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
     </div>
+    
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>

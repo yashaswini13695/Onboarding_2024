@@ -10,13 +10,12 @@ import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MaterialModule } from "./_material/material.module";
 import { MyInfoComponent } from './my-info/my-info.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilesComponent } from './files/files.component';
 import { PeopleComponent } from './people/people.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,8 +33,10 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     MaterialModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [ provideAnimations()],
  

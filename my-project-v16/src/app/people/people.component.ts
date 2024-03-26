@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { JsonDataService } from '../_services/jsonData.service';
 
 export interface Employee {
   name: string;
@@ -10,9 +11,12 @@ export interface Employee {
   reportingTo:string;
 }
 
-interface Food {
+interface Departments {
   value: string;
-  viewValue: string;
+}
+
+interface Status {
+  value: string;
 }
 
 @Component({
@@ -24,26 +28,33 @@ export class PeopleComponent implements OnInit {
   activeTab: string = 'list'; 
 
   displayedColumns: string[] = ['name', 'email', 'status', 'department','jobTitle','reportingTo'];
-  employees: Employee[] = [
-    { name: 'Mike', status: 'Active', department: 'IT', email:"mike@onboarding.com",jobTitle:"Reporting Manager",reportingTo:""},
-    { name: 'John Doe', status: 'Active', department: 'IT', email:"john@onboarding.com",jobTitle:"Senior Dev",reportingTo:"Mike Johnson"},
-    { name: 'Jane Smith', status: 'Active', department: 'IT',email:"jane@onboarding.com",jobTitle:"Junior Dev",reportingTo:"Mike Johnson"},
-    { name: 'Mike Johnson', status: 'Active', department: 'IT',email:"johnson@onboarding.com",jobTitle:"Senior Manager",reportingTo:"Mike"},
-    { name: 'Emily Brown', status: 'Active', department: 'QA',email:"emily@onboarding.com",jobTitle:"Senior QA Engineer",reportingTo:"Mike"},
-    { name: 'David Wilson', status: 'Active', department: 'QA', email:"david@onboarding.com",jobTitle:"QA Engineer",reportingTo:"Emily Brown"},
+  employees: Employee[] = [];
+  dataSource:any = [];
+  status : Status[] = [
+    {value: 'Active'},
+    {value: 'In-Active'}
+  ]
+  departments: Departments[] = [
+    {value: 'IT'},
+    {value: 'QA'},
+    {value: 'Project Management'},
+    {value: 'Design'},
+    {value: 'Support/Helpdesk'},
+    {value: 'HR'},
+    {value: 'Sales/Marketing'},
+    {value: 'Finance/Accounting'}
   ];
+  selectedDepartment: any;
+  selectedStatus:any;
 
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
 
-  dataSource = new MatTableDataSource(this.employees);
-
-  constructor() { }
+  constructor(private jsonDataService: JsonDataService) { }
 
   ngOnInit(): void {
+    this.jsonDataService.getEmployeeList().subscribe((res) => { 
+      this.employees = res
+      this.dataSource = new MatTableDataSource(this.employees);
+    })
   }
 
   activateTab(event:any,tab: string):void {
@@ -59,4 +70,38 @@ export class PeopleComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+
+  onDepartmentSelection() {
+   // Get a copy of the original data
+  let filteredData = [...this.employees];
+
+  // Apply filter based on selected department
+  if (this.selectedDepartment === 'ALL') {
+    filteredData = [...this.employees];
+  } else {
+    filteredData = filteredData.filter((element: any) => {
+      return element.department === this.selectedDepartment;
+    });
+  }
+
+  // Update the data source
+  this.dataSource = new MatTableDataSource(filteredData);
+  }
+
+  onStatusSelection() {
+    // Get a copy of the original data
+   let filteredData = [...this.employees];
+ 
+   // Apply filter based on selected department
+   if (this.selectedStatus === 'ALL') {
+     filteredData = [...this.employees];
+   } else {
+     filteredData = filteredData.filter((element: any) => {
+       return element.status === this.selectedStatus;
+     });
+   }
+ 
+   // Update the data source
+   this.dataSource = new MatTableDataSource(filteredData);
+   }
 }

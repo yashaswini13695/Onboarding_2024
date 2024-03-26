@@ -72,9 +72,30 @@
     color: white;
     background-color: #55CE97; /* Change the color as per your preference */
 }
-.example-header {
-    min-height: 40px;
-}
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .filter-container,
+  .select-container {
+    display: flex;
+  }
+  
+  .filter-container {
+    flex-grow: 1; /* To make the filter take up remaining space */
+  }
+  
+  .select-container {
+    flex-grow: 0; /* To prevent the select containers from expanding */
+  }
+   
+  .select-container {
+    margin-right: 10px; /* Adjust the value as needed */
+    .mat-mdc-form-field { 
+        margin-right: 10px; /* Adjust the value as needed */
+      }
+  } 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
     height: 40px !important
-    }
+}
