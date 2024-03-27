@@ -10,10 +10,15 @@ import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MaterialModule } from "./_material/material.module";
 import { MyInfoComponent } from './my-info/my-info.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilesComponent } from './files/files.component';
 import { PeopleComponent } from './people/people.component';
-
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { AddEmployeeComponent } from './_models/add-employee/add-employee.component';
+import { ConfirmModelComponent } from './_models/confirm-model/confirm-model.component';
+import { SuccessModelComponent } from './_models/success-model/success-model.component';
 
 @NgModule({
   declarations: [
@@ -25,15 +30,22 @@ import { PeopleComponent } from './people/people.component';
     NavBarComponent,
     MyInfoComponent,
     FilesComponent,
-    PeopleComponent
+    PeopleComponent,
+    AddEmployeeComponent,
+    ConfirmModelComponent,
+    SuccessModelComponent
   ],
   imports: [
     BrowserModule,
     MaterialModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ provideAnimations()],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

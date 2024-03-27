@@ -1,0 +1,101 @@
+
+.peopleContainer {
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.content {
+    display: flex;
+    align-items: center;
+}
+.left {
+    display: flex;
+    align-items: center;
+}
+.label {
+    margin-right: 10px;
+}
+.navigation {
+    border-bottom: 1px solid black;
+    color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align the text to the right */
+    
+}
+.navigation .left-btn {
+    margin-right: auto;
+    background-color: white;
+    border: 1px solid;
+    color: #4CAF50;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* font-size: 16px; */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block; /* Make the list items flex items */
+}
+.navigation ul li {
+    display: inline;
+    margin-right: 40px;
+    
+}
+.navigation ul li:first-child {
+    margin-left: 0;
+}
+
+.navigation ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Change link color */
+    
+}
+.table-container {
+    width: 100%; /* Set width as per your requirement */
+    overflow-x: auto; /* Add horizontal scroll if needed */
+    padding: 10px 10px 10px 0px
+}
+.custom-header {
+    color: white;
+    background-color: #55CE97; /* Change the color as per your preference */
+}
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .filter-container,
+  .select-container {
+    display: flex;
+  }
+  
+  .filter-container {
+    flex-grow: 1; /* To make the filter take up remaining space */
+  }
+  
+  .select-container {
+    flex-grow: 0; /* To prevent the select containers from expanding */
+  }
+   
+  .select-container {
+    margin-right: 10px; /* Adjust the value as needed */
+    .mat-mdc-form-field { 
+        margin-right: 10px; /* Adjust the value as needed */
+      }
+  } 
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    height: 40px !important
+}

@@ -9,10 +9,10 @@ mat-nav-list.list-horizontal {
 
 mat-nav-list a {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 mat-nav-list a.active_route {
-   color: orange; /* Set the color for the active state */
+   color: white; /* Set the color for the active state */
 }
 
