@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { JsonDataService } from '../_services/jsonData.service';
+import { MatDialog } from '@angular/material/dialog';
+import { AddEmployeeComponent } from '../_models/add-employee/add-employee.component';
 
 export interface Employee {
   name: string;
@@ -48,7 +50,7 @@ export class PeopleComponent implements OnInit {
   selectedStatus:any;
 
 
-  constructor(private jsonDataService: JsonDataService) { }
+  constructor(private jsonDataService: JsonDataService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.jsonDataService.getEmployeeList().subscribe((res) => { 
@@ -103,5 +105,12 @@ export class PeopleComponent implements OnInit {
  
    // Update the data source
    this.dataSource = new MatTableDataSource(filteredData);
+   }
+
+   addEmployee() {
+    this.dialog.open(AddEmployeeComponent, {
+      width: '250px', // Adjust width as needed
+      // You can add more configurations here
+    });
    }
 }

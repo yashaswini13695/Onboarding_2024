@@ -1,0 +1,8 @@
+[ 
+    {"email": "mike@onboarding.com", "password" : "123456789"},
+    {"email": "john@onboarding.com", "password" : "123456789"},
+    {"email": "jane@onboarding.com", "password" : "123456789"},
+    {"email": "johnson@onboarding.com", "password" : "123456789"},
+    {"email": "emily@onboarding.com", "password" : "123456789"},
+    {"email": "david@onboarding.com", "password" : "123456789"}
+]

@@ -16,6 +16,9 @@ import { PeopleComponent } from './people/people.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { AddEmployeeComponent } from './_models/add-employee/add-employee.component';
+import { ConfirmModelComponent } from './_models/confirm-model/confirm-model.component';
+import { SuccessModelComponent } from './_models/success-model/success-model.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     MyInfoComponent,
     FilesComponent,
-    PeopleComponent
+    PeopleComponent,
+    AddEmployeeComponent,
+    ConfirmModelComponent,
+    SuccessModelComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,7 @@
       <mat-icon aria-hidden="false" aria-label=" filter icon">reorder</mat-icon> <h1>People</h1>
     </div>
     <div class="navigation">
-        <button class="left-btn">+ New Employee</button>
+        <button class="left-btn" (click)="addEmployee()">+ New Employee</button>
         <nav>
             <ul>
                 <li><a [class.active]="activeTab === 'list'" href="#" (click)="activateTab($event,'list')">List</a></li>
