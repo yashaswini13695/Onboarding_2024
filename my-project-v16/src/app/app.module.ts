@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddEmployeeComponent } from './_models/add-employee/add-employee.component';
 import { ConfirmModelComponent } from './_models/confirm-model/confirm-model.component';
 import { SuccessModelComponent } from './_models/success-model/success-model.component';
+import { ReportsComponent } from './reports/reports.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SuccessModelComponent } from './_models/success-model/success-model.com
     PeopleComponent,
     AddEmployeeComponent,
     ConfirmModelComponent,
-    SuccessModelComponent
+    SuccessModelComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,

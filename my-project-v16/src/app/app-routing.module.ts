@@ -7,6 +7,7 @@ import { MyInfoComponent } from './my-info/my-info.component';
 import { PeopleComponent } from './people/people.component';
 import { FilesComponent } from './files/files.component';
 import { authGuard } from './_guards/auth.guard';
+import { ReportsComponent } from './reports/reports.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path : 'my-info', component : MyInfoComponent,canActivate:[authGuard]},
   { path : 'people', component : PeopleComponent,canActivate:[authGuard]},
   { path : 'files', component : FilesComponent,canActivate:[authGuard]},
+  { path : 'reports', component : ReportsComponent,canActivate:[authGuard] },
   { path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];
 
