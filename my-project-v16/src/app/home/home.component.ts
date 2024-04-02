@@ -16,10 +16,4 @@ export class HomeComponent {
       this.currentUserRole = role;
     });
   }
-
-
-  logout() {
-    // Call the logout method from the AuthService
-    this.authService.logout();
-  }
 }
