@@ -1,6 +1,65 @@
-<h1> I am in Home Component</h1>
-<div>
-    <h2>Hello, {{ currentUserRole === 'admin' ? 'Admin' : 'Employee' }}</h2>
-</div>
+<div class="content">
+  <div class="profile-container">
+    <div class="profile-image"><img src="../../assets/ONBOARDING.png" width="50" height="50" style="border-radius: 50%;overflow: hidden;"></div>
+    <div class="user-role">
+      <h2>{{ currentUserRole === 'admin' ? 'Admin' : 'Employee' }}</h2>
+      <h4>Software Engineer</h4>
+    </div>
+  </div>
+  <div class="content-two">
+      <div class="welcome-container">
+        <div class="vacation-grid-container">
+          <div class="grid-item">
+            <div class="grid-data">
+              <h5>Vacation</h5>
+              <mat-icon aria-hidden="false" aria-label=" filter icon" class="large-icon">houseboat</mat-icon>
+              <p>0.0 HOURS USED(YTD)</p>
+              <p>0.0 HOURS SCHEDULED</p>
+            </div>
+          </div>
+          <div class="grid-item">
+            <div class="grid-data">
+              <h5>Bereavement</h5>
+              <mat-icon aria-hidden="false" aria-label=" filter icon" class="large-icon">houseboat</mat-icon>
+              <p>0.0 HOURS USED(YTD)</p>
+              <p>0.0 HOURS SCHEDULED</p>
+            </div>
+          </div>
+        </div>
+        <button class="req-btn">Request Time Off</button>
+      </div>
+      <div class="welcome-info">
+        <mat-card>
+          <div class="headline"><p><strong>Welcome {{ currentUserRole === 'admin' ? 'Admin' : 'Employee' }}</strong></p>
+            <p class="subtext">Here is a quick look at some of the things you can do.</p></div>
+          <mat-card-content>
+            <div class="grid-container">
+              <div class="grid-item"> <mat-icon aria-hidden="false" aria-label=" filter icon" class="large-icon">account_circle</mat-icon>
+                <p><strong>Employee Information</strong></p>
+                <p class="subtext">Maintain job details for employees</p></div>
+              <div class="grid-item"><mat-icon aria-hidden="false" aria-label=" filter icon" class="large-icon">contact_phone</mat-icon>
+                <p><strong>Company Directory</strong></p>
+                <p class="subtext">Connect with your company co-workers</p></div>  
+             </div>
+              <div class="grid-container2">
+                <div class="grid-item"><mat-icon aria-hidden="false" aria-label=" filter icon" class="large-icon">school</mat-icon>
+                  <p><strong>Training</strong></p>
+                  <p class="subtext">Your training and certification</p>
+                </div>
+                <div class="grid-item"> <mat-icon aria-hidden="false" aria-label=" filter icon" class="large-icon">work_history</mat-icon>
+                  <p><strong>Request for Time Off</strong></p>
+                  <p class="subtext">Check your balance and request time off</p>
+                </div>
+                <div class="grid-item"><mat-icon aria-hidden="false" aria-label=" filter icon" class="large-icon">people_alt</mat-icon>
+                  <p><strong>Onboard/Offboard</strong></p>
+                  <p class="subtext">Create the tasks to process run smoothly</p>
+                </div>
+              </div>
 
-<button (click)="logout()">Logout</button>
+         
+          </mat-card-content>
+        </mat-card>
+      </div>
+  </div>
+
+</div>

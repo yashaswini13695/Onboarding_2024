@@ -1,0 +1,131 @@
+.content {
+  display: block;
+  position: relative;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  background-color: #55ce97;
+  padding: 20px;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.content-two {
+  background: #cbc4c430;
+  padding: 20px;
+  display: flex;
+}
+
+.welcome-container {
+  flex: 40%;
+  margin-right: 10px;
+}
+
+.welcome-container,
+.welcome-info {
+  padding: 15px;
+}
+
+.vacation-grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  // padding: 10px;
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+    .grid-item:last-child{
+      border-left: 1px solid rgb(202, 191, 191);
+    }
+    p {
+      font-size: 12px;
+    }
+}
+.req-btn {
+  grid-column: span 2;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  background: #00b894;
+  color: #fff;
+  font-size: 15px;
+  height: 40px;
+}
+
+.welcome-info {
+  flex: 60%;
+  display: grid; /* Add grid display */
+  grid-template-columns: 1fr; /* Adjust columns as needed */
+  gap: 10px; /* Adjust gap as needed */
+  align-items: center;
+  justify-content: left;
+  margin-bottom: 20px;
+  .headline {
+    text-align: center;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+  }
+  .grid-container2 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+   .grid-item:first-child {
+      border-left: none
+    }
+    
+    .grid-item {
+      border-left: 1px solid rgb(202, 191, 191);
+    }
+
+    .grid-item p {
+      margin: 5px 0; /* Adjust margin for paragraph elements */
+      word-wrap: break-word;
+    }
+    p {
+      font-size: 12px;
+    }
+}
+
+.large-icon {
+  font-size: 40px;
+  width: 40px;
+  height: 40px;
+  color: grey;
+}
+
+.subtext {
+  margin-top: 1px;
+}
+
+p {
+  color: rgb(85, 80, 80);
+}
+
+// .mat-mdc-card-content {
+//   // display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
