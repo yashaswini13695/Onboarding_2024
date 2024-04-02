@@ -1,1 +1,22 @@
 <p>files works!</p>
+<!-- files.component.html -->
+
+<div class="documents">
+    <div class="document" *ngFor="let document of documents">
+      <mat-card class="card">
+        <a [href]="document.url" target="_blank">
+          <img src="../../assets/pdf-img.png" alt="PDF Icon" class="pdf-icon" style="width: 200px;height: 250px;">
+          <div class="overlay">
+            <button mat-icon-button>
+              <mat-icon>download</mat-icon>
+            </button>
+            <!-- <span>Download</span> -->
+          </div>
+        </a>
+        <div class="card-content">
+          <span>{{ document.name }}</span>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  
