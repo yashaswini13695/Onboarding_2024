@@ -1,0 +1,47 @@
+.my-info-container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    background-color: #55ce97;
+    padding: 20px;
+  }
+  
+  .profile-image {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+.content {
+    display: flex;
+    align-items: center;
+    background-color: #55ce97;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mat-mdc-tab-group {
+    width: 100%; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+  }
+  ::ng-deep .mat-mdc-tab-header {background-color: #55ce97;}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
