@@ -1,8 +1,8 @@
 [
-    { "name": "Mike", "status": "Active", "department": "IT", "email": "mike@onboarding.com", "jobTitle": "CTO", "reportingTo": "", "role":"admin"},
-    { "name": "John Doe", "status": "Active", "department": "IT", "email": "john@onboarding.com", "jobTitle": "Senior Dev", "reportingTo": "Mike Johnson", "role":"employee" },
-    { "name": "Jane Smith", "status": "Active", "department": "IT", "email": "jane@onboarding.com", "jobTitle": "Junior Dev", "reportingTo": "Mike Johnson","role":"employee" },
-    { "name": "Mike Johnson", "status": "Active", "department": "IT", "email": "johnson@onboarding.com", "jobTitle": "Senior Reporting Manager", "reportingTo": "Mike","role":"employee" },
-    { "name": "Emily Brown", "status": "Active", "department": "QA", "email": "emily@onboarding.com", "jobTitle": "Senior QA Engineer", "reportingTo": "Mike","role":"employee" },
-    { "name": "David Wilson", "status": "Active", "department": "QA", "email": "david@onboarding.com", "jobTitle": "QA Engineer", "reportingTo": "Emily Brown","role":"employee" }
+    { "name": "Mike", "status": "Active", "department": "IT", "email": "mike@onboarding.com", "jobTitle": "CTO", "reportingTo": "" },
+    { "name": "John Doe", "status": "Active", "department": "IT", "email": "john@onboarding.com", "jobTitle": "Senior Dev", "reportingTo": "Mike Johnson" },
+    { "name": "Jane Smith", "status": "Active", "department": "IT", "email": "jane@onboarding.com", "jobTitle": "Junior Dev", "reportingTo": "Mike Johnson" },
+    { "name": "Mike Johnson", "status": "Active", "department": "IT", "email": "johnson@onboarding.com", "jobTitle": "Senior Reporting Manager", "reportingTo": "Mike" },
+    { "name": "Emily Brown", "status": "Active", "department": "QA", "email": "emily@onboarding.com", "jobTitle": "Senior QA Engineer", "reportingTo": "Mike" },
+    { "name": "David Wilson", "status": "Active", "department": "QA", "email": "david@onboarding.com", "jobTitle": "QA Engineer", "reportingTo": "Emily Brown" }
 ]

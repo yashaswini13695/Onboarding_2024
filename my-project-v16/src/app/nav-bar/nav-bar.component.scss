@@ -16,17 +16,3 @@ mat-nav-list a.active_route {
    color: white; /* Set the color for the active state */
 }
 
-.user-menu {
-  margin-left: auto; /* Push the user menu to the right */
-  display: flex;
-  align-items: center;
-}
-
-.user-menu button {
-  color: white; /* Set color for user name */
-}
-
-.user-name {
-  margin-left: 5px; /* Add some space between the user icon and the user name */
-  color: white;
-}
