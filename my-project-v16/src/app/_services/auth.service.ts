@@ -1,7 +1,8 @@
 // auth.service.ts
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,19 +10,18 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
   private loggedIn: BehaviorSubject<boolean>;
   private currentUserRole = new BehaviorSubject<string | null>(this.getCurrentUsername());
+  private userList!: any[];
 
-  constructor(private router: Router) { 
+  constructor(private router: Router, private http: HttpClient) { 
     this.loggedIn = new BehaviorSubject<boolean>(this.isAuthenticated());
+    this.getUserList().subscribe(data => this.userList = data);
   }
 
   login(username: string, password: string): Observable<boolean> {
-    // Implement your authentication logic here
-    // For demonstration, let's assume admin and employee credentials
-    if (username === 'admin' && password === 'admin') {
-      this.setCurrentUser('admin');
-      return this.loggedIn.asObservable();
-    } else if (username === 'employee' && password === 'employee') {
-      this.setCurrentUser('employee');
+    // Check if the user is in the user list JSON and if the password is correct
+    const user = this.userList.find(u => u.email === username && u.password === password);
+    if (user) {
+      this.setCurrentUser(user.email);
       return this.loggedIn.asObservable();
     } else {
       this.loggedIn.next(false);
@@ -45,12 +45,12 @@ export class AuthService {
     this.currentUserRole.next(null);
   }
 
-  private setCurrentUser(role: string) {
+  private setCurrentUser(username: string) {
     localStorage.setItem('isLoggedIn', 'true');
     this.loggedIn.next(true);
-    localStorage.setItem('currentUser', role);
+    localStorage.setItem('currentUser', username);
     // Update the currentUser BehaviorSubject
-    this.currentUserRole.next(role);
+    this.currentUserRole.next(username);
   }
 
   isLoggedIn(): Observable<boolean> {
@@ -69,5 +69,11 @@ export class AuthService {
   private getCurrentUsername(): string | null {
     // Get the current user from localStorage
     return localStorage.getItem('currentUser');
+  }
+
+  getUserList(): Observable<any> {
+    return this.http.get<any>('../jsonData/userList.json').pipe(
+      map((data) => data)
+    );
   }
 }
