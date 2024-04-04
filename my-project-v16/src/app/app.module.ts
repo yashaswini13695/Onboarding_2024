@@ -9,7 +9,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MaterialModule } from "./_material/material.module";
-import { MyInfoComponent } from './my-info/my-info.component';
+// import { MyInfoComponent } from './my-info/my-info.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilesComponent } from './files/files.component';
 import { PeopleComponent } from './people/people.component';
@@ -20,6 +20,7 @@ import { AddEmployeeComponent } from './_models/add-employee/add-employee.compon
 import { ConfirmModelComponent } from './_models/confirm-model/confirm-model.component';
 import { SuccessModelComponent } from './_models/success-model/success-model.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,12 +29,13 @@ import { SuccessModelComponent } from './_models/success-model/success-model.com
     ForgotPasswordComponent,
     HomeComponent,
     NavBarComponent,
-    MyInfoComponent,
+    // MyInfoComponent,
     FilesComponent,
     PeopleComponent,
     AddEmployeeComponent,
     ConfirmModelComponent,
-    SuccessModelComponent
+    SuccessModelComponent,
+    // PersonalInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,65 @@
+<form [formGroup]="myForm" (ngSubmit)="submitForm()" style="background-color: white;">
+    <div class="form-row">
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="First Name" formControlName="firstName">
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="Middle Name" formControlName="middleName">
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+    </div>
+  
+    <div class="form-row">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-select placeholder="Contact Code" formControlName="contactCode">
+          <!-- Add options for contact codes here -->
+          <mat-option value="code1">Code 1</mat-option>
+          <mat-option value="code2">Code 2</mat-option>
+          <mat-option value="code3">Code 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="Contact Number" formControlName="contactNumber">
+      </mat-form-field>
+    </div>
+  
+    <div class="form-row">
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+    </div>
+  
+    <div class="form-row">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-select placeholder="Country" formControlName="country">
+          <!-- Add options for countries here -->
+          <mat-option value="country1">Country 1</mat-option>
+          <mat-option value="country2">Country 2</mat-option>
+          <mat-option value="country3">Country 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <div class="form-row">
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="Address 1" formControlName="address1">
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="Address 2" formControlName="address2">
+      </mat-form-field>
+    </div>
+  
+    <div class="form-row">
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="City" formControlName="city">
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <input matInput placeholder="Pin Code" formControlName="pinCode">
+      </mat-form-field>
+    </div>
+  
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+  </form>
+  
