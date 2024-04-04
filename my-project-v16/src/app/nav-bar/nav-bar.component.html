@@ -17,4 +17,14 @@
         <a href  routerLink="/reports" routerLinkActive="active_route">Reports</a>
       </mat-list-item>
     </mat-nav-list>
+      <!-- // Add the user name and should display in right on click of user name a menu has to pen to give option for logout -->
+      <div class="user-menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <!-- <span class="user-name">Admin</span> -->
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logout()">Logout</button>
+        </mat-menu>
+    </div>
 </mat-toolbar>
