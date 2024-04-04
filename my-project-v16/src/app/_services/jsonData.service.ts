@@ -14,7 +14,7 @@ export class JsonDataService {
   constructor(private http: HttpClient) {}
 
   getEmployeeList(): Observable<any> {
-    return this.http.get<any>('../jsonData/employeeList.json').pipe(
+    return this.http.get<any>('../jsonData/userList.json').pipe(
       map((data) => data)
     );
   }
