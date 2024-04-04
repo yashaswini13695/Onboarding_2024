@@ -21,7 +21,7 @@ export class AuthService {
     // Check if the user is in the user list JSON and if the password is correct
     const user = this.userList.find(u => u.email === username && u.password === password);
     if (user) {
-      this.setCurrentUser(user.firstName + '' + user.lastName);
+      this.setCurrentUser(user.email);
       return this.loggedIn.asObservable();
     } else {
       this.loggedIn.next(false);

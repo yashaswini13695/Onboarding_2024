@@ -2,15 +2,15 @@
   <div class="profile-container">
     <div class="profile-image">
       <img
-        src="../../assets/ONBOARDING.png"
+        src={{userDetails[0]?.userImg}}
         width="50"
         height="50"
         style="border-radius: 50%; overflow: hidden"
       />
     </div>
     <div class="user-role">
-      <h2>{{ currentUserRole }}</h2>
-      <h4>Software Engineer</h4>
+      <h2>{{userDetails[0]?.firstName}} {{userDetails[0]?.lastName}}</h2>
+      <h4>{{userDetails[0]?.jobTitle}}</h4>
     </div>
   </div>
   <div class="content-two">
