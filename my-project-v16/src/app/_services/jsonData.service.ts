@@ -45,4 +45,10 @@ export class JsonDataService {
 
     return groupedContacts;
   }
+
+  getCountryList() : Observable<any> {
+    return this.http.get<any>('../jsonData/countryList.json').pipe(
+      map((data) => data)
+    );
+  }
 }

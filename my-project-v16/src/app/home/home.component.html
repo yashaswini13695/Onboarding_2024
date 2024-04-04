@@ -2,15 +2,15 @@
   <div class="profile-container">
     <div class="profile-image">
       <img
-        src={{userDetails[0]?.userImg}}
+        src={{userDetails?.userImg}}
         width="50"
         height="50"
         style="border-radius: 50%; overflow: hidden"
       />
     </div>
     <div class="user-role">
-      <h2>{{userDetails[0]?.firstName}} {{userDetails[0]?.lastName}}</h2>
-      <h4>{{userDetails[0]?.jobTitle}}</h4>
+      <h2>{{userDetails?.firstName}} {{userDetails?.lastName}}</h2>
+      <h4>{{userDetails?.jobTitle}}</h4>
     </div>
   </div>
   <div class="content-two">

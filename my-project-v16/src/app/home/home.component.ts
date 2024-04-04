@@ -12,15 +12,17 @@ export class HomeComponent implements OnInit{
   userDetails:any;
 
   constructor(private authService: AuthService,private jsonDataService: JsonDataService) {    
-    this.authService.getCurrentUserRole().subscribe(role => {
-    this.currentUserRole = role;
-   })
   }
 
   ngOnInit() {
-    this.jsonDataService.getEmployeeList().subscribe((res) => {
-      // @ts-ignore
-      this.userDetails = res.filter(ele => ele.email === this.currentUserRole)
-    })
+    this.authService.getCurrentUserDetails().subscribe(response => {
+      if (response !== null) {
+        this.userDetails = JSON.parse(response);
+        console.log('Current User Details', this.userDetails);
+      } else {
+        // Handle the case where the user details are not available in localStorage
+        console.log('User details not found in localStorage');
+      }
+    });
   }
 }
