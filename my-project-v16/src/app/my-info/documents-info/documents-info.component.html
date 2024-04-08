@@ -1,0 +1,53 @@
+<!-- <div class="container">
+    <div class="box" (mouseover)="showOptions = true" (mouseout)="showOptions = false">
+      <img src="../../../assets/folder-imge.png" alt="Folder" class="folder-image">
+      <div *ngIf="showOptions" class="options">
+        <button class="download-button" mat-icon-button>
+            <mat-icon>download</mat-icon>
+        </button>
+        <div class="menu-button" (click)="toggleMenu()">
+          <div class="dots"></div>
+          <div class="dots"></div>
+          <div class="dots"></div>
+        </div>
+        <div *ngIf="showMenu" class="menu">
+          
+          <p>Option 1</p>
+          <p>Option 2</p>
+          <p>Option 3</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+  <!-- <div *ngFor="let folder of folders" class="folder-container" (mouseenter)="showDownloadButton = true" (mouseleave)="showDownloadButton = false">
+    <div class="box">
+        <img src="../../../assets/folder-imge.png">
+    </div>
+    <button *ngIf="showDownloadButton" mat-icon-button class="download-button">
+      <mat-icon>cloud_download</mat-icon>
+    </button>
+  </div> -->
+  
+
+  <!-- <div class="folder-container">
+    <mat-card *ngFor="let folder of folders" class="folder-card">
+      <img src="../../../assets/folder-imge.png" class="folder-image" (click)="navigateToFolder(folder)">
+      <button mat-icon-button class="download-button">
+        <mat-icon>cloud_download</mat-icon>
+      </button>
+    </mat-card>
+  </div> -->
+
+
+  <div class="folder-container">
+    <mat-card *ngFor="let folder of folders;let i = index;" class="folder-card" (mouseenter)="showDownloadButton[i] = true" (mouseleave)="showDownloadButton[i] = false">
+      <img src="../../../assets/folder-imge.png" class="folder-image" >
+      <p class="folder-name">{{ folder }}</p> 
+      <button mat-icon-button class="download-button" *ngIf="showDownloadButton[i]">
+        <mat-icon>cloud_download</mat-icon>
+      </button>
+    </mat-card>
+  </div>
+  
+  

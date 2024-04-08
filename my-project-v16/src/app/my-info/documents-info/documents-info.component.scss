@@ -1,0 +1,28 @@
+.folder-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .folder-card {
+    position: relative; /* Make the card position relative */
+    width: 200px; /* Set the width of each card */
+    height: 200px;
+    margin: 10px; /* Add margin between cards */
+    padding: 40px;
+  }
+  
+  .folder-image {
+    width: 100%; /* Make the image fill the card horizontally */
+  }
+  
+  .download-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .folder-name {
+    text-align: center; /* Align text in the middle */
+    // margin-top: 5px; /* Add some space between the image and the folder name */
+  }
