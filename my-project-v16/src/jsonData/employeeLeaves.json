@@ -1,0 +1,176 @@
+[
+    {
+        "userId": "MS1301",
+        "totalLeavesAvailable": "15",
+        "totalUsedLeaves": "2",
+        "remainingLeaves": "13",
+        "leaves": [
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            }
+        ]
+    },
+    {
+        "userId": "JD1302",
+        "totalLeavesAvailable": "15",
+        "totalUsedLeaves": "4",
+        "remainingLeaves": "11",
+        "leaves": [
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            }
+        ]
+    },
+    {
+        "userId": "JS1303",
+        "totalLeavesAvailable": "15",
+        "totalUsedLeaves": "0",
+        "remainingLeaves": "15",
+        "leaves": [
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            }
+        ]
+    },
+    {
+        "userId": "MJ1304",
+        "totalLeavesAvailable": "15",
+        "totalUsedLeaves": "3",
+        "remainingLeaves": "12",
+        "leaves": [
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            }
+        ]
+    },
+    {
+        "userId": "EB1305",
+        "totalLeavesAvailable": "15",
+        "totalUsedLeaves": "5",
+        "remainingLeaves": "10",
+        "leaves": [
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            }
+        ]
+    },
+    {
+        "userId": "DW1306",
+        "totalLeavesAvailable": "15",
+        "totalUsedLeaves": "2",
+        "remainingLeaves": "13",
+        "leaves": [
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            },
+            {
+                "leaveReason": "",
+                "leaveDate": "",
+                "appliedOn": "",
+                "approvedOn": "",
+                "isRejected": ""
+            }
+        ]
+    }
+]

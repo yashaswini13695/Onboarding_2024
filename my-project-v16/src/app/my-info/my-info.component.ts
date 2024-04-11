@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { MaterialModule } from '../_material/material.module';
 import { PersonalInfoComponent } from '../my-info/personal-info/personal-info.component';
 import { DocumentsInfoComponent } from '../my-info/documents-info/documents-info.component';
+import { LeavesComponent } from './leaves/leaves.component';
+import { BenefitsComponent } from './benefits/benefits.component';
+import { PayInfoComponent } from './pay-info/pay-info.component';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../_services/auth.service';
 import { JsonDataService } from '../_services/jsonData.service';
@@ -11,7 +14,7 @@ import { JsonDataService } from '../_services/jsonData.service';
   standalone: true,
   templateUrl: './my-info.component.html',
   styleUrls: ['./my-info.component.scss'],
-  imports:[MaterialModule,PersonalInfoComponent,DocumentsInfoComponent,CommonModule]
+  imports:[MaterialModule,PersonalInfoComponent,DocumentsInfoComponent,LeavesComponent,PayInfoComponent,BenefitsComponent,CommonModule]
 })
 export class MyInfoComponent {
   userDetails:any

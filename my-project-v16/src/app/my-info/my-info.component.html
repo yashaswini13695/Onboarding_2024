@@ -24,6 +24,9 @@
           margin-right: 20px;"> Left side Info</div> -->
           <div><app-personal-info *ngIf="tabName === 'Personal'"></app-personal-info></div>
           <div><app-documents-info *ngIf="tabName === 'Documents'"></app-documents-info></div>
+          <div><app-pay-info *ngIf="tabName === 'Pay Info'"></app-pay-info></div>
+          <div><app-leaves  *ngIf="tabName === 'Leaves'"></app-leaves></div>
+          <div><app-benefits *ngIf="tabName === 'Benefits'"></app-benefits></div>
         </div>
       </mat-tab>
     </mat-tab-group>

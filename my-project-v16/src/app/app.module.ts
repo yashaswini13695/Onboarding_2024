@@ -19,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddEmployeeComponent } from './_models/add-employee/add-employee.component';
 import { ConfirmModelComponent } from './_models/confirm-model/confirm-model.component';
 import { SuccessModelComponent } from './_models/success-model/success-model.component';
+// import { LeavesComponent } from './my-info/leaves/leaves.component';
+// import { PayInfoComponent } from './my-info/pay-info/pay-info.component';
+// import { BenefitsComponent } from './my-info/benefits/benefits.component';
 
 
 @NgModule({
@@ -35,6 +38,9 @@ import { SuccessModelComponent } from './_models/success-model/success-model.com
     AddEmployeeComponent,
     ConfirmModelComponent,
     SuccessModelComponent,
+    // LeavesComponent,
+    // PayInfoComponent,
+    // BenefitsComponent,
     // PersonalInfoComponent
   ],
   imports: [
