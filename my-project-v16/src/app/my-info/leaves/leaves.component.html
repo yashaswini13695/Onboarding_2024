@@ -1,1 +1,105 @@
-<p>leaves works!</p>
+<div class="container">
+    <div class="mat-card-container">
+        <div class="leaves-mat-card" style="background-color: #00564D;color: white;">
+            <div class="number">8</div>
+            <div class="name">Total Available Leaves</div>
+        </div>
+        <div class="leaves-mat-card" style="background-color: #107E57;color: white;">
+            <div class="number">7</div>
+            <div class="name">Remaining</div>
+        </div>
+        <div class="leaves-mat-card" style="background-color: #A1CE3F;color: white;">
+            <div class="number">1</div>
+            <div class="name">Used Leaves</div>
+        </div>
+    </div>
+    <div class="div-with-space">
+       <div class="table-container">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="dateRequested">
+              <th mat-header-cell *matHeaderCellDef>Date Requested</th>
+              <td mat-cell *matCellDef="let element">{{ element.firstName }} {{element.lastName}}</td>
+            </ng-container>
+            <ng-container matColumnDef="leaveType">
+              <th mat-header-cell *matHeaderCellDef>Leave Type</th>
+              <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+            </ng-container>
+            <ng-container matColumnDef="startDate">     
+              <th mat-header-cell *matHeaderCellDef>Start Date</th>
+              <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+            </ng-container>
+            <ng-container matColumnDef="endDate">
+              <th mat-header-cell *matHeaderCellDef>End Date</th>
+              <td mat-cell *matCellDef="let element">{{ element.department }}</td>
+            </ng-container>
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef>Status</th>
+              <td mat-cell *matCellDef="let element">{{ element.jobTitle }}</td>
+            </ng-container>
+            <ng-container matColumnDef="duration">
+              <th mat-header-cell *matHeaderCellDef>Duration</th>
+              <td mat-cell *matCellDef="let element">{{ element.jobTitle }}</td>
+            </ng-container>
+            <ng-container matColumnDef="reason">      
+              <th mat-header-cell *matHeaderCellDef>Reason</th>
+              <td mat-cell *matCellDef="let element">{{ element.reportingTo }}</td>
+            </ng-container>
+            <ng-container matColumnDef="approver">
+              <th mat-header-cell *matHeaderCellDef>Approver</th>
+              <td mat-cell *matCellDef="let element">{{ element.reportingTo }}</td>
+            </ng-container>
+            <ng-container matColumnDef="comments">
+              <th mat-header-cell *matHeaderCellDef>Comments</th>
+              <td mat-cell *matCellDef="let element">{{ element.reportingTo }}</td>
+            </ng-container>
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef>Action</th>
+              <td mat-cell *matCellDef="let element">{{ element.reportingTo }}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" class="custom-header"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+        <!-- <div class="no-data-message" *ngIf="dataSource.length === 0">No records found</div> -->
+        <mat-card style="width: calc(100% - 20px);">
+          <mat-card-header style="display: flex; justify-content: center; align-items: center;">
+            <mat-card-title>Request Time Off</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <form #requestForm="ngForm" (ngSubmit)="submitRequest(requestForm)" class="request-form">
+              <mat-form-field class="form-group" appearance="outline">
+                <!-- <mat-label>Requesting Date</mat-label> -->
+                <input matInput type="date" [(ngModel)]="requestingDate" name="requestingDate" required>
+              </mat-form-field>
+              <mat-form-field class="form-group" appearance="outline">
+                <!-- <mat-label>Start Date</mat-label> -->
+                <input matInput [matDatepicker]="startDatePicker" placeholder="Start Date" [(ngModel)]="startDate" name="startDate" required [min]="yesterday">
+                <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #startDatePicker></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field class="form-group" appearance="outline">
+                <!-- <mat-label>End Date</mat-label> -->
+                <input matInput [matDatepicker]="endDatePicker" placeholder="End Date" [(ngModel)]="endDate" name="endDate" required>
+                <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #endDatePicker></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field class="form-group" appearance="outline">
+                <!-- <mat-label>Leave Type</mat-label> -->
+                <mat-select [(ngModel)]="leaveType" placeholder="Leave Type" name="leaveType" required>
+                  <mat-option *ngFor="let type of leaveTypes" [value]="type">{{ type }}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="form-group" appearance="outline">
+                <!-- <mat-label>Reason</mat-label> -->
+                <textarea matInput  placeholder="Reason" [(ngModel)]="reason" name="reason" required></textarea>
+              </mat-form-field>
+              <mat-form-field class="form-group" appearance="outline">
+                <!-- <mat-label>Approver</mat-label> -->
+                <input matInput type="text" placeholder="Approver" [(ngModel)]="approver" name="approver" required>
+              </mat-form-field>
+              <button mat-raised-button color="primary" type="submit" [disabled]="requestForm.invalid">Submit</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+       </div>
+    </div>    
+</div>

@@ -10,7 +10,7 @@ import { MaterialModule } from 'src/app/_material/material.module';
   imports: [MaterialModule,CommonModule ]
 })
 export class DocumentsInfoComponent implements OnInit {
-  folders:any = ['Folder1','Folder2','Folder3']
+  folders:any = ['Folder1','Folder2','Folder3', 'Folder4','Folder5','Folder6']
 
   showDownloadButton:boolean[] = [];
 
