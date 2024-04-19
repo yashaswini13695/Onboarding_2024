@@ -109,7 +109,7 @@ export class PeopleComponent implements OnInit {
 
    addEmployee() {
     this.dialog.open(AddEmployeeComponent, {
-      width: '250px', // Adjust width as needed
+      width: '850px', // Adjust width as needed
       // You can add more configurations here
     });
    }

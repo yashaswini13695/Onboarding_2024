@@ -31,7 +31,7 @@ import { SuccessModelComponent } from './_models/success-model/success-model.com
     MyInfoComponent,
     FilesComponent,
     PeopleComponent,
-    AddEmployeeComponent,
+    // AddEmployeeComponent,
     ConfirmModelComponent,
     SuccessModelComponent
   ],
