@@ -3,11 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef,MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatDialog } from '@angular/material/dialog';
-import { MatTableDataSource } from '@angular/material/table';
 import { MaterialModule } from 'src/app/_material/material.module';
-import { JsonDataService } from 'src/app/_services/jsonData.service';
-import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,7 +11,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   templateUrl: './add-employee.component.html',
   styleUrls: ['./add-employee.component.scss'],
-  imports:[MaterialModule,CommonModule,ReactiveFormsModule,FormsModule,MatDatepickerModule,MatNativeDateModule,MatRippleModule]
+  imports:[MaterialModule,CommonModule,ReactiveFormsModule,FormsModule,MatDatepickerModule]
 })
 export class AddEmployeeComponent implements OnInit {
   userForm!: FormGroup;
@@ -53,6 +49,10 @@ export class AddEmployeeComponent implements OnInit {
   
     onFileSelected(event: any) {
       this.userImage = event.target.files[0];
+    }
+
+    closeDialog() {
+      this.dialogRef.close();
     }
 
 }

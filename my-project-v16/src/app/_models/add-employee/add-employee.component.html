@@ -1,4 +1,14 @@
-  <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-container">
+<mat-toolbar style="background-color: #55CE97;">
+  <span style="color: white;">Add Employee</span>
+  <span class="spacer"></span>
+  <mat-icon (click)="closeDialog()"
+                  aria-hidden="false"
+                  aria-label=" filter icon"
+                  class="custom-close-button"
+                  >close</mat-icon
+                >
+</mat-toolbar>
+ <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-container">
     <mat-form-field appearance="outline">
       <input matInput placeholder="First Name" formControlName="firstName">
     </mat-form-field>

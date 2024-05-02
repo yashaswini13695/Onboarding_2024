@@ -18,3 +18,14 @@
     grid-column: span 3;
     justify-self: center;
   }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .custom-close-button:hover {
+    background-color: white;
+    border-radius: 25px;
+    cursor : pointer; 
+  }
+
