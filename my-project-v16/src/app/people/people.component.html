@@ -47,34 +47,36 @@
         </mat-form-field>
       </div>
     </div>
-    
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let element">{{ element.firstName }} {{element.lastName}}</td>
-      </ng-container>
-      <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef>Email</th>
-        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
-      </ng-container>
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef>Employment status</th>
-        <td mat-cell *matCellDef="let element">{{ element.status }}</td>
-      </ng-container>
-      <ng-container matColumnDef="department">
-        <th mat-header-cell *matHeaderCellDef>Department</th>
-        <td mat-cell *matCellDef="let element">{{ element.department }}</td>
-      </ng-container>
-      <ng-container matColumnDef="jobTitle">
-        <th mat-header-cell *matHeaderCellDef>Job Title</th>
-        <td mat-cell *matCellDef="let element">{{ element.jobTitle }}</td>
-      </ng-container>
-      <ng-container matColumnDef="reportingTo">
-        <th mat-header-cell *matHeaderCellDef>Reporting To</th>
-        <td mat-cell *matCellDef="let element">{{ element.reportingTo }}</td>
-      </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="custom-header"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-    </table>
+    <cdk-virtual-scroll-viewport itemSize="50" tvsItemSize class="wrapper mat-elevation-z2">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Name</th>
+          <td mat-cell *matCellDef="let element">{{ element.firstName }} {{element.lastName}}</td>
+        </ng-container>
+        <ng-container matColumnDef="email" >
+          <th mat-header-cell *matHeaderCellDef>Email</th>
+          <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Employment status</th>
+          <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+        </ng-container>
+        <ng-container matColumnDef="department" >
+          <th mat-header-cell *matHeaderCellDef>Department</th>
+          <td mat-cell *matCellDef="let element">{{ element.department }}</td>
+        </ng-container>
+        <ng-container matColumnDef="jobTitle">
+          <th mat-header-cell *matHeaderCellDef>Job Title</th>
+          <td mat-cell *matCellDef="let element">{{ element.jobTitle }}</td>
+        </ng-container>
+        <ng-container matColumnDef="reportingTo">
+          <th mat-header-cell *matHeaderCellDef>Reporting To</th>
+          <td mat-cell *matCellDef="let element">{{ element.reportingTo }}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true" class="custom-header"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </cdk-virtual-scroll-viewport>
+
   </div>
 </div>
