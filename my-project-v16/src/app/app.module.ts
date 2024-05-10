@@ -12,11 +12,11 @@ import { MaterialModule } from "./_material/material.module";
 import { MyInfoComponent } from './my-info/my-info.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilesComponent } from './files/files.component';
-import { PeopleComponent } from './people/people.component';
+// import { PeopleComponent } from './people/people.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { AddEmployeeComponent } from './_models/add-employee/add-employee.component';
+// import { AddEmployeeComponent } from './_models/add-employee/add-employee.component';
 import { ConfirmModelComponent } from './_models/confirm-model/confirm-model.component';
 import { SuccessModelComponent } from './_models/success-model/success-model.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -32,7 +32,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     NavBarComponent,
     MyInfoComponent,
     FilesComponent,
-    PeopleComponent,
+    // PeopleComponent,
     // AddEmployeeComponent,
     ConfirmModelComponent,
     SuccessModelComponent

@@ -3,6 +3,11 @@ import { MatTableDataSource } from '@angular/material/table';
 import { JsonDataService } from '../_services/jsonData.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEmployeeComponent } from '../_models/add-employee/add-employee.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MaterialModule } from "../_material/material.module";
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { TableVirtualScrollDataSource } from 'ng-table-virtual-scroll';
 
 export interface Employee {
   name: string;
@@ -24,11 +29,12 @@ interface Status {
 @Component({
   selector: 'app-people',
   templateUrl: './people.component.html',
-  styleUrls: ['./people.component.scss']
+  standalone: true,
+  styleUrls: ['./people.component.scss'],
+  imports : [ScrollingModule,MaterialModule,CommonModule,FormsModule]
 })
 export class PeopleComponent implements OnInit {
-  activeTab: string = 'list'; 
-
+  activeTab: string = 'list';
   displayedColumns: string[] = ['name', 'email', 'status', 'department','jobTitle','reportingTo'];
   employees: Employee[] = [];
   dataSource:any = [];
@@ -48,6 +54,7 @@ export class PeopleComponent implements OnInit {
   ];
   selectedDepartment: any;
   selectedStatus:any;
+  rowHeight = 48;
 
 
   constructor(private jsonDataService: JsonDataService,private dialog: MatDialog) { }
@@ -55,7 +62,7 @@ export class PeopleComponent implements OnInit {
   ngOnInit(): void {
     this.jsonDataService.getEmployeeList().subscribe((res) => { 
       this.employees = res
-      this.dataSource = new MatTableDataSource(this.employees);
+      this.dataSource = this.employees;
     })
   }
 
