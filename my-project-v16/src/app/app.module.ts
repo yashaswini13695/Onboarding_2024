@@ -12,17 +12,19 @@ import { MaterialModule } from "./_material/material.module";
 // import { MyInfoComponent } from './my-info/my-info.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilesComponent } from './files/files.component';
-import { PeopleComponent } from './people/people.component';
+// import { PeopleComponent } from './people/people.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { AddEmployeeComponent } from './_models/add-employee/add-employee.component';
+// import { AddEmployeeComponent } from './_models/add-employee/add-employee.component';
 import { ConfirmModelComponent } from './_models/confirm-model/confirm-model.component';
 import { SuccessModelComponent } from './_models/success-model/success-model.component';
 // import { LeavesComponent } from './my-info/leaves/leaves.component';
 // import { PayInfoComponent } from './my-info/pay-info/pay-info.component';
 // import { BenefitsComponent } from './my-info/benefits/benefits.component';
 
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -34,8 +36,8 @@ import { SuccessModelComponent } from './_models/success-model/success-model.com
     NavBarComponent,
     // MyInfoComponent,
     FilesComponent,
-    PeopleComponent,
-    AddEmployeeComponent,
+    // PeopleComponent,
+    // AddEmployeeComponent,
     ConfirmModelComponent,
     SuccessModelComponent,
     // LeavesComponent,
@@ -50,7 +52,9 @@ import { SuccessModelComponent } from './_models/success-model/success-model.com
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [ provideAnimations()],
  
