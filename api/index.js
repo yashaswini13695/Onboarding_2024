@@ -21,3 +21,9 @@ app.listen(3000,() => {
         console.log("MongoDB Connection Successful");
     })
 })
+
+app.get('/api/onboarding/getUserList', (request, response) => {
+    database.collection("onboardingcollection").find({}).toArray((error,result)=> {
+        response.send(result);
+    })
+})
