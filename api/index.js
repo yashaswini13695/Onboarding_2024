@@ -35,6 +35,9 @@ const errorMiddleware = require('./middlewares/errorMiddleware');
 const config = require('./config/config');
 const db = require('./config/db');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv'); // Make sure dotenv is required
+
+dotenv.config(); // Load environment variables from .env file
 
 // Database connection
 db.connect();
