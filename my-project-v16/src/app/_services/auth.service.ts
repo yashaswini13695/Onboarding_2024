@@ -1,13 +1,20 @@
 // auth.service.ts
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { ConfigService } from './config.service';
 
+export interface User {
+  firstName: string;
+  lastName:string;
+  // Add other properties as needed
+}
+
 export interface AuthResponse {
   token: string;
+  user: User;
   // Add other properties if needed
 }
 
@@ -26,12 +33,15 @@ export class AuthService {
     // this.getUserList().subscribe(data => this.userList = data);
   }
 
-  login(username: string, password: string): Observable<AuthResponse> {
-    var credentials = {username, password}
-    return this.http.post<any>(`${this.apiUrl}/login`, credentials).pipe(
+  login(email: string, password: string): Observable<AuthResponse> {
+    var credentials = {email, password}
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>(`${this.apiUrl}/auth/login`, credentials, { headers }).pipe(
       map((response: any) => response as AuthResponse),
       tap(response => {
         localStorage.setItem('authToken', response.token);
+        this.setCurrentUser(response.user.firstName + '' + response.user.lastName);
+        return this.loggedIn.asObservable();
       })
     );
     // Check if the user is in the user list JSON and if the password is correct

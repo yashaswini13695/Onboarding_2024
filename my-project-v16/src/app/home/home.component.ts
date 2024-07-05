@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  readonly API ="http://localhost:3000/api/onboarding/";
+  // readonly API ="http://localhost:3000/api/onboarding/";
   currentUserRole: any;
   userList:any = [];
 
@@ -19,12 +19,12 @@ export class HomeComponent {
       this.currentUserRole = role;
     });
 
-    this.getUserList();
+    // this.getUserList();
   }
 
-  getUserList() {
-    this.http.get(this.API +'getUserList').subscribe(result => {
-      this.userList = result;
-    })
-  }
+  // getUserList() {
+  //   this.http.get(this.API +'getUserList').subscribe(result => {
+  //     this.userList = result;
+  //   })
+  // }
 }

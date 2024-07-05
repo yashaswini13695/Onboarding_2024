@@ -29,6 +29,7 @@
 // })
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
 const errorMiddleware = require('./middlewares/errorMiddleware');
@@ -44,7 +45,17 @@ db.connect();
 
 // Middleware setup
 app.use(express.json());
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+
+// CORS configuration
+const corsOptions = {
+    origin: 'http://localhost:4200', // Allow requests from this origin
+    methods: ['GET', 'POST'], // Allow these HTTP methods
+    allowedHeaders: ['Content-Type'], // Allow these headers
+};
+
+// Use CORS middleware
+app.use(cors(corsOptions));
 
 // Routes
 app.use('/api/auth', authRoutes);
