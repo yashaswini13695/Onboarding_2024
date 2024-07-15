@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MaterialModule } from 'src/app/_material/material.module';
 import { CommonModule } from '@angular/common';
+import { PeopleService } from '../../_services/people.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -18,10 +19,11 @@ export class AddEmployeeComponent implements OnInit {
   roles: string[] = ['Role1', 'Role2', 'Role3']; // Add your roles here
   departments: string[] = ['Department1', 'Department2', 'Department3']; // Add your departments here
   userImage!: File;
+  employees:any = [];
 
-  constructor(
+  constructor(private peopleService: PeopleService,
     public dialogRef: MatDialogRef<AddEmployeeComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,private fb: FormBuilder
+    @Inject(MAT_DIALOG_DATA) public data: any,private fb: FormBuilder,
     ) { 
     }
   
@@ -30,13 +32,28 @@ export class AddEmployeeComponent implements OnInit {
         firstName: ['', Validators.required],
         middleName: [''],
         lastName: ['', Validators.required],
+        personalEmail: ['', [Validators.required, Validators.email]],
         email: ['', [Validators.required, Validators.email]],
         contactNumber: ['', Validators.required],
         dob: [''],
+        dateOfJoining: [''],
         role: ['', Validators.required],
+        reportingTo: [''],
         jobTitle: ['', Validators.required],
-        department: ['', Validators.required]
+        department: ['', Validators.required],
+        employmentType : ['',Validators.required],
+        emergencyContact : ['', Validators.required],
+
       });
+
+      this.getEmployeeList();
+    }
+
+    getEmployeeList() {
+      this.peopleService.getEmployeeList().subscribe((res) => { 
+        this.employees = res
+       
+      })
     }
   
     onSubmit() {

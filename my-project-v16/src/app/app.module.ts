@@ -15,12 +15,13 @@ import { FilesComponent } from './files/files.component';
 // import { PeopleComponent } from './people/people.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 // import { AddEmployeeComponent } from './_models/add-employee/add-employee.component';
 import { ConfirmModelComponent } from './_models/confirm-model/confirm-model.component';
 import { SuccessModelComponent } from './_models/success-model/success-model.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { HttpInterceptorService } from './_services/http-interceptor-service.interceptor'
 
 @NgModule({
   declarations: [
@@ -48,7 +49,11 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [ provideAnimations()],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorService,
+    multi: true
+  }, provideAnimations(),],
  
   bootstrap: [AppComponent]
 })

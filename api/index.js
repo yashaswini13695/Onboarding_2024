@@ -31,8 +31,9 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
-const userRoutes = require('./routes/userRoutes');
+const employeeRoutes = require('./routes/employeeRoutes');
 const errorMiddleware = require('./middlewares/errorMiddleware');
+const authMiddleware = require('./middlewares/authMiddleware');
 const config = require('./config/config');
 const db = require('./config/db');
 const bodyParser = require('body-parser');
@@ -51,19 +52,22 @@ app.use(express.json());
 const corsOptions = {
     origin: 'http://localhost:4200', // Allow requests from this origin
     methods: ['GET', 'POST'], // Allow these HTTP methods
-    allowedHeaders: ['Content-Type'], // Allow these headers
+    allowedHeaders: ['Content-Type','Authorization'], // Allow these headers
 };
 
 // Use CORS middleware
 app.use(cors(corsOptions));
 
+// Apply the middleware globally to all routes
+// app.use(authMiddleware);
+
 // Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/userList', userRoutes);
-
-
+// app.use('/api/employee',authMiddleware, employeeRoutes);
+app.use('/api/employee', employeeRoutes)
 // Error handling middleware
 app.use(errorMiddleware);
+
 
 const PORT = config.port || 3000;
 app.listen(PORT, () => {

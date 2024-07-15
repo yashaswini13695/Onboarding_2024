@@ -2,8 +2,8 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, map } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable,throwError } from 'rxjs';
+import { tap,  catchError, map} from 'rxjs/operators';
 import { ConfigService } from './config.service';
 
 export interface User {
@@ -14,7 +14,7 @@ export interface User {
 
 export interface AuthResponse {
   token: string;
-  user: User;
+  employee: User;
   // Add other properties if needed
 }
 
@@ -35,24 +35,22 @@ export class AuthService {
 
   login(email: string, password: string): Observable<AuthResponse> {
     var credentials = {email, password}
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post<any>(`${this.apiUrl}/auth/login`, credentials, { headers }).pipe(
+    // const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post<any>(`${this.apiUrl}/auth/login`, credentials).pipe(
       map((response: any) => response as AuthResponse),
       tap(response => {
         localStorage.setItem('authToken', response.token);
-        this.setCurrentUser(response.user.firstName + '' + response.user.lastName);
+        this.setCurrentUser(response.employee.firstName + '' + response.employee.lastName);
         return this.loggedIn.asObservable();
+      }),catchError((error: any) => {
+        // Handle error appropriately, e.g., log it or show user-friendly message
+        console.error('Login error:', error);
+        this.loggedIn.next(false); // Notify login status as false
+  
+        // Rethrow the error to keep it consistent in the observable chain
+        return throwError(() => error);
       })
     );
-    // Check if the user is in the user list JSON and if the password is correct
-    // const user = this.userList.find(u => u.email === username && u.password === password);
-    // if (user) {
-    //   this.setCurrentUser(user.firstName + '' + user.lastName);
-    //   return this.loggedIn.asObservable();
-    // } else {
-    //   this.loggedIn.next(false);
-    //   return new Observable<boolean>(observer => observer.next(false));
-    // }
   }
 
   logout() {
@@ -102,9 +100,4 @@ export class AuthService {
     return localStorage.getItem('currentUser');
   }
 
-  // getUserList(): Observable<any> {
-  //   return this.http.get<any>('../jsonData/userList.json').pipe(
-  //     map((data) => data)
-  //   );
-  // }
 }

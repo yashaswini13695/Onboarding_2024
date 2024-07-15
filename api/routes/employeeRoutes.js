@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/userController');
+const employeeController = require('../controllers/employeeController');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 
@@ -10,7 +10,10 @@ const authMiddleware = require('../middlewares/authMiddleware');
 // Update user profile
 // router.put('/profile', authMiddleware, userController.updateProfile);
 
-// Route to add a new user
-router.post('/add', userController.createUser);
+//Route to get EmployeeList
+router.get('/list', employeeController.getEmployeeList);
+
+// Route to add a new Employee
+router.post('/add', employeeController.createEmployee);
 
 module.exports = router;

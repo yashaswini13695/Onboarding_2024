@@ -14,10 +14,10 @@ import { ConfigService } from './config.service';
     }
 
     getEmployeeList(): Observable<any> {
-       return this.http.get<any>(`${this.apiUrl}/employee`);
+       return this.http.get<any>(`${this.apiUrl}/employee/list`);
     }
 
     addEmployee(employee: any): Observable<any> {
-        return this.http.post<any>(`${this.apiUrl}/employees`, employee);
+        return this.http.post<any>(`${this.apiUrl}/employee/add`, employee);
     }
   }

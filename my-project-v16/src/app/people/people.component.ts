@@ -7,6 +7,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MaterialModule } from "../_material/material.module";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { PeopleService } from '../_services/people.service';
 import { TableVirtualScrollDataSource } from 'ng-table-virtual-scroll';
 
 export interface Employee {
@@ -57,10 +58,10 @@ export class PeopleComponent implements OnInit {
   rowHeight = 48;
 
 
-  constructor(private jsonDataService: JsonDataService,private dialog: MatDialog) { }
+  constructor(private peopleService: PeopleService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.jsonDataService.getEmployeeList().subscribe((res) => { 
+    this.peopleService.getEmployeeList().subscribe((res) => { 
       this.employees = res
       this.dataSource = this.employees;
     })
